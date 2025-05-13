@@ -1,0 +1,146 @@
+/* Стили для страницы контактов */
+.contact-page {
+    padding: 40px 0;
+}
+
+.contact-page h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--heading-color);
+}
+
+.contact-content {
+    display: flex; /* Используем Flexbox для расположения информации и формы */
+    gap: 40px; /* Расстояние между блоками */
+    flex-wrap: wrap; /* Перенос блоков на новую строку при уменьшении экрана */
+}
+
+.contact-info,
+.contact-form {
+    flex: 1; /* Блоки будут занимать равное доступное пространство */
+    min-width: 300px; /* Минимальная ширина блока перед переносом */
+}
+
+.contact-info h2,
+.contact-form h2 {
+    color: var(--heading-color);
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.info-item i {
+    /* Стили для иконок (вам нужно будет использовать шрифт с иконками, например, Font Awesome) */
+    margin-right: 10px;
+    color: var(--primary-color); /* Цвет иконок */
+    font-size: 1.2em;
+}
+
+.info-item a {
+     color: var(--text-color); /* Цвет ссылок */
+     text-decoration: none;
+     transition: color 0.3s ease;
+}
+
+.info-item a:hover {
+    color: var(--primary-color); /* Цвет ссылок при наведении */
+}
+
+
+.map-container {
+    margin-top: 20px;
+    border-radius: 8px;
+    overflow: hidden; /* Обрезаем углы iframe */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.map-container iframe {
+    display: block; /* Убираем нижний отступ у iframe */
+    width: 100%;
+    height: 400px; /* Настройте высоту карты */
+    border: 0;
+}
+
+
+/* Стили для формы */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+     color: var(--heading-color);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    box-sizing: border-box; /* Учитываем padding и border в ширине */
+    background-color: var(--input-bg-color); /* Цвет фона полей */
+    color: var(--text-color); /* Цвет текста в полях */
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="tel"]:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color); /* Цвет рамки при фокусе */
+}
+
+.form-group textarea {
+    resize: vertical; /* Разрешаем изменение размера только по вертикали */
+}
+
+.contact-form .btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    border: none; /* Убираем стандартную рамку кнопки */
+    cursor: pointer; /* Курсор "рука" при наведении */
+    transition: background-color 0.3s ease;
+}
+
+.contact-form .btn:hover {
+    background-color: var(--primary-dark-color);
+}
+
+/* Адаптивность для страницы контактов */
+@media (max-width: 768px) {
+    .contact-content {
+        flex-direction: column; /* На маленьких экранах блоки располагаются вертикально */
+        gap: 30px;
+    }
+
+    .contact-info,
+    .contact-form {
+        min-width: 100%; /* Занимают всю ширину */
+    }
+
+     .map-container iframe {
+         height: 300px; /* Уменьшаем высоту карты на мобильных */
+     }
+}

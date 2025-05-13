@@ -1,0 +1,35 @@
+/* theme.css */
+
+:root {
+    /* Светлая тема по умолчанию */
+    --background-color: #ffffff;
+    --text-color: #333;
+    --header-bg-color: #f8f8f8;
+    --header-text-color: #333;
+    --footer-bg-color: #f8f8f8;
+    --footer-text-color: #333;
+    --primary-color: #007bff; /* Пример основного цвета */
+    --primary-dark-color: #0056b3;
+    --secondary-color: #28a745; /* Пример дополнительного цвета */
+    --secondary-dark-color: #218838;
+    --heading-color: #333;
+    --border-color: #ddd;
+    --card-bg-color: #fff;
+}
+
+body.dark-theme {
+    /* Темная тема */
+    --background-color: #1a1a1a;
+    --text-color: #f8f8f8;
+    --header-bg-color: #2c2c2c;
+    --header-text-color: #f8f8f8;
+    --footer-bg-color: #2c2c2c;
+    --footer-text-color: #f8f8f8;
+    --primary-color: #66b3ff; /* Более светлый основной цвет для темной темы */
+    --primary-dark-color: #3385ff;
+     --secondary-color: #5cb874; /* Более светлый дополнительный цвет */
+    --secondary-dark-color: #4cae64;
+    --heading-color: #f8f8f8;
+    --border-color: #555;
+    --card-bg-color: #333;
+}

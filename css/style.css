@@ -1,0 +1,515 @@
+/* Базовые стили */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: var(--background-color); /* Используем CSS переменную */
+    color: var(--text-color); /* Используем CSS переменную */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Плавный переход при смене темы */
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Header */
+header {
+    background-color: var(--header-bg-color);
+    color: var(--header-text-color);
+    padding: 10px 0;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px; /* Настройте размер логотипа */
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--header-text-color);
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--primary-color); /* Пример цвета при наведении */
+}
+
+/* Hero Section */
+.hero {
+    background: url('https://ic.pics.livejournal.com/sergeynikmelnik/49102963/177623/177623_original.jpg') no-repeat center; /* Фоновое изображение */
+    text-align: center;
+    padding: 100px 5px;
+     color: white !important;
+}
+
+.hero h1 {
+    margin-top: 0;
+    font-size: 3.5em;
+}
+
+.hero p{
+    font-size: 1.7em;
+    color: rgb(255, 241, 82);
+    font-weight: 750;
+}
+
+.hero .btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white !important;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.hero .btn:hover {
+    background-color: var(--primary-dark-color);
+}
+
+/* Секции контента (About, Tours, Contact) */
+section {
+    padding: 40px 0;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--heading-color);
+}
+
+.tour-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.tour-item {
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    padding: 15px;
+    text-align: center;
+    background-color: var(--card-bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.tour-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.tour-item h3 {
+    margin-top: 0;
+    color: var(--heading-color);
+}
+
+.tour-item .btn {
+     display: inline-block;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.tour-item .btn:hover {
+    background-color: var(--secondary-dark-color);
+}
+
+
+/* Footer */
+footer {
+    background-color: var(--footer-bg-color);
+    color: var(--footer-text-color);
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Адаптивность */
+
+/* Для планшетов и меньше */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        margin-top: 10px;
+    }
+
+    nav ul li {
+        margin: 0 10px;
+    }
+
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .tour-list {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+/* Для мобильных устройств */
+@media (max-width: 480px) {
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    .hero {
+        padding: 60px 10px;
+    }
+
+    .hero h1 {
+        font-size: 1.8em;
+    }
+
+    .tour-item {
+        padding: 10px;
+    }
+}
+
+/* Общие стили для страницы экскурсии */
+.tour-page {
+    padding: 20px 0;
+}
+
+.tour-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.tour-header img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.tour-header h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: var(--heading-color);
+}
+
+.tour-header .tour-duration, .tour-header .tour-price {
+    color: var(--text-color);
+    margin-bottom: 5px;
+}
+
+.tour-header .btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.tour-header .btn:hover {
+    background-color: var(--primary-dark-color);
+}
+
+/* Стили для секции с деталями */
+.tour-details {
+    margin-bottom: 30px;
+}
+
+.tour-details h2, .tour-details h3 {
+    color: var(--heading-color);
+    margin-bottom: 15px;
+}
+
+.tour-details p, .tour-details ul, .tour-details ol {
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.tour-details ul, .tour-details ol {
+    margin-left: 20px;
+}
+
+/* Стили для отзывов */
+.tour-reviews {
+    margin-bottom: 30px;
+}
+
+.review-item {
+    border: 1px solid var(--border-color);
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    background-color: var(--card-bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.review-text {
+    font-style: italic;
+    margin-bottom: 5px;
+}
+
+.review-author {
+    font-weight: bold;
+    color: var(--heading-color);
+}
+
+/* Стили для других экскурсий (используем стили с главной страницы) */
+.other-tours h2 {
+    text-align: center;
+    margin-bottom: 40px;
+     color: var(--heading-color);
+}
+
+.tour-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.tour-item {
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    padding: 15px;
+    text-align: center;
+     background-color: var(--card-bg-color);
+      color: var(--text-color);
+         transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.tour-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px
+}
+
+/* Header styles (adjust if necessary based on previous code) */
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Дополнительные стили для отступов, если нужны */
+}
+
+/* Навигация по умолчанию (для больших экранов) */
+#main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Горизонтальное меню */
+}
+
+#main-nav ul li {
+    margin-left: 20px;
+}
+
+#main-nav a {
+    text-decoration: none;
+    color: var(--header-text-color);
+    transition: color 0.3s ease;
+}
+
+#main-nav a:hover {
+    color: var(--primary-color);
+}
+
+/* Стили для бургер-меню (скрыто по умолчанию на больших экранах) */
+.hamburger {
+    padding: 15px;
+    display: none; /* Скрываем на больших экранах */
+    cursor: pointer;
+    transition-property: opacity, filter;
+    transition-duration: 0.15s;
+    transition-timing-function: linear;
+    font: inherit;
+    color: inherit;
+    text-transform: none;
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+    overflow: visible;
+    z-index: 1100; /* Убедимся, что бургер выше остального контента хедера */
+}
+
+.hamburger:hover {
+    opacity: 0.7;
+}
+
+.hamburger.is-active:hover {
+    opacity: 0.7;
+}
+
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+    background-color: var(--header-text-color); /* Цвет крестика в темной/светлой теме */
+}
+
+.hamburger-box {
+    width: 30px;
+    height: 24px;
+    display: inline-block;
+    position: relative;
+}
+
+.hamburger-inner {
+    display: block;
+    top: 50%;
+    margin-top: -2px;
+}
+
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+    width: 30px;
+    height: 4px;
+    background-color: var(--header-text-color); /* Цвет полосок в темной/светлой теме */
+    border-radius: 4px;
+    position: absolute;
+    transition-property: transform;
+    transition-duration: 0.15s;
+    transition-timing-function: ease;
+}
+
+.hamburger-inner::before,
+.hamburger-inner::after {
+    content: "";
+    display: block;
+}
+
+.hamburger-inner::before {
+    top: -10px;
+}
+
+.hamburger-inner::after {
+    bottom: -10px;
+}
+
+/* Анимация бургера в крестик (Cross) */
+.hamburger--cross .hamburger-inner {
+  &::before {
+    top: calc(10px * 2 * -1);
+    transition: transform 0.15s 0.15s cubic-bezier(0.645, 0.045, 0.355, 1), top 0.075s 0.15s linear, left 0.075s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+  &::after {
+    bottom: calc(10px * 2 * -1);
+    transition: transform 0.15s 0.15s cubic-bezier(0.645, 0.045, 0.355, 1), bottom 0.075s 0.15s linear, left 0.075s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+}
+
+.hamburger--cross.is-active {
+  .hamburger-inner {
+    transform: rotate(45deg);
+    transition: transform 0.15s 0.075s ease-in;
+
+    &::before {
+      top: 0;
+      left: 0;
+      transform: rotate(-90deg);
+      transition: top 0.075s ease-out, left 0.075s 0.075s ease-out, transform 0.15s 0.075s ease-out;
+    }
+
+    &::after {
+      bottom: 0;
+      left: 0;
+      transform: rotate(-90deg);
+      transition: bottom 0.075s ease-out, left 0.075s 0.075s ease-out, transform 0.15s 0.075s ease-out;
+    }
+  }
+}
+
+
+/* Медиа-запрос для мобильных устройств */
+@media (max-width: 768px) { /* Используем ту же точку останова, что и для адаптивности */
+
+    /* Отображаем бургер-меню */
+    .hamburger {
+        display: block;
+    }
+
+    /* Скрываем стандартное горизонтальное меню */
+    #main-nav {
+        display: none; /* Скрываем по умолчанию */
+        position: absolute; /* Абсолютное позиционирование */
+        top: 60px; /* Отступ от верха (высота хедера) */
+        left: 0;
+        right: 0;
+        background-color: var(--header-bg-color); /* Фон меню */
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        z-index: 999; /* Убедимся, что меню ниже бургера, но выше контента */
+        flex-direction: column; /* Располагаем пункты вертикально */
+        padding: 10px 20px;
+        transition: transform 0.3s ease-in-out; /* Анимация появления */
+        transform: translateY(-100%); /* Сдвигаем за верхний край экрана */
+    }
+
+     /* Класс для отображения меню */
+    #main-nav.menu-active {
+        display: flex; /* Показываем меню */
+        transform: translateY(0); /* Сдвигаем на место */
+    }
+
+
+    #main-nav ul {
+        flex-direction: column; /* Пункты вертикально */
+        width: 100%; /* Занимают всю ширину контейнера */
+    }
+
+    #main-nav ul li {
+        margin: 0; /* Убираем горизонтальные отступы */
+        border-bottom: 1px solid var(--border-color); /* Разделитель между пунктами */
+    }
+
+     #main-nav ul li:last-child {
+         border-bottom: none; /* У последнего пункта нет рамки */
+     }
+
+    #main-nav a {
+        display: block; /* Ссылка занимает всю ширину пункта */
+        padding: 15px 0; /* Отступы внутри пункта */
+        color: var(--header-text-color); /* Цвет текста в мобильном меню */
+        width: 100%;
+    }
+
+
+}
